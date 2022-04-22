@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <Servo.h>
 
-double offsetX=7;
+double offsetX=4;
 double offsetY=0;
 int t;
 
@@ -115,18 +115,26 @@ struct TVC {
 
         }
         void X08_ejection(){
-                for (pos = 90 + offsetY; pos >= 65 +offsetY; pos -= 1) {
+
+                delay(3000);
+                
+                for (pos=90+offsetY; pos >= 30 +offsetY; pos -= 1) {
 
                         X08_Y.write(pos);
-                        delay(10);
+                        delay(5);
                 }
-                delay(20);
+                delay(30);
 
-                for (pos = 75 +offsetY; pos <= 90 + offsetY; pos += 1) {
+                
+
+                for (pos=30+offsetY; pos <= 90 +offsetY; pos += 1) {
 
                         X08_Y.write(pos);
-                        delay(10);
+                        delay(1);
                 }
+                delay(40);
+                        
+                
                 delay(15);
         }
 
@@ -233,7 +241,7 @@ struct COUNTDOWN countdown;
 struct Buzzer buzzer;
 struct LED led;
 void setup(){
-
+/*
         led.init();
         //buzzer.init();
         pyro.init();
@@ -248,10 +256,10 @@ void setup(){
         //countdown.countdown();
         pyro.fire();
         tvc.X80_fire();
-/*
+*/
         tvc.servo_init();
         tvc.X08_ejection();
-*/
+
 
 }
 
