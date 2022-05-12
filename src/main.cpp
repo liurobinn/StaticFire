@@ -148,10 +148,10 @@ struct PYRO {
 
         void fire(){
                 digitalWrite(20,HIGH);
-                digitalWrite(16,LOW);
+                //digitalWrite(16,LOW);
                 delay(3000);
                 digitalWrite(20,LOW);
-                digitalWrite(16,HIGH);
+                //digitalWrite(16,HIGH);
                 delay(1);
         }
 
@@ -241,28 +241,35 @@ struct COUNTDOWN countdown;
 struct Buzzer buzzer;
 struct LED led;
 void setup(){
-/*
-        led.init();
+        //led.init();
         //buzzer.init();
         pyro.init();
-
+/*
         tvc.servo_init();
         tvc.X80_testX();
         tvc.X80_testY();
         tvc.X80_test();
         pyro.init();
         led.initIndicator();
-        //buzzer.initIndicator();
-        //countdown.countdown();
-        pyro.fire();
-        tvc.X80_fire();
+        buzzer.initIndicator();
+        countdown.countdown();
+
 */
+delay(1000);
+        pyro.fire();
+/*
+        tvc.X80_fire();
+
         tvc.servo_init();
         tvc.X08_ejection();
-
+*/
 
 }
 
 void loop(){
+delay(1000);
+        pyro.fire();
 
+        delay(1000);
+        pyro.fire();
 }
