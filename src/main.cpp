@@ -255,8 +255,9 @@ void setup(){
         countdown.countdown();
 
 */
-delay(1000);
+        delay(1000);
         pyro.fire();
+        pinMode(13,OUTPUT);
 /*
         tvc.X80_fire();
 
@@ -267,9 +268,8 @@ delay(1000);
 }
 
 void loop(){
-delay(1000);
-        pyro.fire();
-
+        digitalWrite(13, HIGH);
         delay(1000);
-        pyro.fire();
+        digitalWrite(13, LOW);
+        delay(1000);
 }
